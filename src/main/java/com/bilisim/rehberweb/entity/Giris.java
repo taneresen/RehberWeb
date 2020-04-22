@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.bilisim.rehberweb.entity;
 
 import java.io.Serializable;
@@ -17,13 +13,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author taner
- */
+
 @Entity
 @Table(name = "giris")
 @NamedQueries({
+    @NamedQuery(name = "Giris.girisKontrol", query = "SELECT g FROM Giris g WHERE g.kullanici =:kullanici and g.sifre =:sifre"),
     @NamedQuery(name = "Giris.findAll", query = "SELECT g FROM Giris g"),
     @NamedQuery(name = "Giris.findByNo", query = "SELECT g FROM Giris g WHERE g.no = :no"),
     @NamedQuery(name = "Giris.findByKullanici", query = "SELECT g FROM Giris g WHERE g.kullanici = :kullanici"),

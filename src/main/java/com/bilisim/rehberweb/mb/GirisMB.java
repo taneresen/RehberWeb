@@ -46,6 +46,7 @@ public class GirisMB {
             HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(false);
             session.setAttribute("username", kullanici);
             return "menu.xhtml";
+            
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hata", "Kullanici Adi veya Sifre Yanlis"));
             return "";

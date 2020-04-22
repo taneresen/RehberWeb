@@ -22,9 +22,9 @@ public class GirisFacade extends AbstractFacade<Giris> {
         super(Giris.class);
     }
     
-    public boolean girisKontrol(String p_username, String p_sifre)
+    public boolean girisKontrol(String p_kullanici, String p_sifre)
     {
-        Giris g = em.createNamedQuery("Giris.girisKontrol",Giris.class).setParameter("kullanici",p_username).setParameter("sifre",p_sifre).getSingleResult();
+        Giris g = em.createNamedQuery("Giris.girisKontrol", Giris.class).setParameter("kullanici", p_kullanici).setParameter("sifre", p_sifre).getSingleResult();
         
         if (g != null) {
             return true;

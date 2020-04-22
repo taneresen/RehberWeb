@@ -23,6 +23,11 @@
             <version>8.0</version>
         </dependency>
         <dependency>
+            <groupId>org.batoo.jpa</groupId>
+            <artifactId>jpql</artifactId>
+            <version>0.1.6</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>${jakartaee}</version>

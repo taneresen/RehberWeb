@@ -7,6 +7,7 @@ import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @Named(value = "girisMB")
 @RequestScoped
@@ -41,6 +42,9 @@ public class GirisMB {
         boolean sonuc = girisFacade.girisKontrol(kullanici, sifre);
 
         if (sonuc) {
+            // giris basarili oldu ise kullanici adini sayfaya atiyoruz.
+            HttpSession session = (HttpSession)FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+            session.setAttribute("username", kullanici);
             return "menu.xhtml";
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Hata", "Kullanici Adi veya Sifre Yanlis"));
